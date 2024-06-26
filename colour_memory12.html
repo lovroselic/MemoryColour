@@ -1,0 +1,57 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="CSS/coolstyle.css" rel="stylesheet" type="text/css">
+    <link href="CSS/memory.css" rel="stylesheet" type="text/css">
+    <title>Memory - Colours</title>
+</head>
+
+<body>
+    <div class="container my-5 p-2 cool_page">
+        <!-- HTML CONTENT -->
+        <h1>Memory - Colours</h1>
+        <p>Find the pairs; each colour has its matching word. Beginners might want to have colour names coloured, while
+            the masters will play without that help
+            (just click the option). The names of colours will be pronounced if you leave the option checked. Both
+            options can be changed during game.</p>
+
+        <form action="">
+            <input checked id="hint" name="Hint" type="checkbox" value="clickHint"> The colour names are coloured.<br>
+            <input checked id="pronounce" name="Pronounce" type="checkbox" value="clickpronounce"> Pronounce colour
+            names.<br>
+        </form>
+        <p id="version" style="font-family: Consolas; font-size:12px"></p>
+    </div>
+    <div class="container">
+        <div class="inf winTrans">
+            <p id="clicks">Guesses: 0 &nbsp; &nbsp; &nbsp;</p>
+            <p id="togo">Pairs to find: 12&nbsp; &nbsp; &nbsp;</p>
+            <p id="what"></p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div id="page" class="winTrans">
+            <div id="welldone" style="display:none">
+                <h1>Well Done!</h1>
+                <h2 id="upd" style="text-align:center">YOU FOUND ALL PAIRS IN GUESSES</h2>
+                <h3 style="text-align:center">Press 'F5' or <input id="play_again" type="button" value="Play again" />
+                    to play again.</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- HTML CONTENT END -->
+    <!-- External JS -->
+    <script src="External/bootstrap.bundle.min.js"></script>
+    <script src="External/jquery-3.6.0.min.js"></script>
+    <!-- JS -->
+    <script src="memory_col12.js" type="text/javascript"></script>
+</body>
+
+</html>
