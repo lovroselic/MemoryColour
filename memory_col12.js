@@ -14,7 +14,7 @@ Array.prototype.swap = function (x, y) {
 };
 Array.prototype.shuffle = function () {
     var i = this.length,
-            j;
+        j;
     while (--i > 0) {
         j = rnd(0, i);
         this.swap(i, j);
@@ -24,8 +24,11 @@ Array.prototype.shuffle = function () {
 
 ///////////////////////////////////////////////////////////////////
 /** missing: path responsive to host */
-const PATH = "Sounds/";
-var Sounds = {names:[]};
+var PATH = "Sounds/";
+if (window.location.hostname === "chestbook.si") {
+    PATH = "https://chestbook.si/wp-content/uploads/Games/Assets/Sounds/";
+}
+var Sounds = { names: [] };
 ///////////////////////////////////////////////////////////////////
 
 $(document).ready(function () {
@@ -67,9 +70,9 @@ $(document).ready(function () {
                     var idx = temp;
                     temp = response[temp];
                     clickedDiv.append("<p>" + combinedArray[X] + "</p>");
-                    if ($("#pronounce").prop("checked")){
-                        Sounds.names[idx].play(); 
-                    }   
+                    if ($("#pronounce").prop("checked")) {
+                        Sounds.names[idx].play();
+                    }
                     if ($("#hint").prop("checked")) {
                         clickedDiv.find('p').css('color', temp);
                     }
@@ -118,8 +121,8 @@ function setUp() {
     call = ['RED', 'GREEN', 'BLUE', 'YELLOW', 'BLACK', 'WHITE', 'BROWN', 'ORANGE', 'GREY', 'PURPLE', 'PINK', 'TURQUOISE'];
     response = ['#FF0000', '#008000', '#0000FF', '#FFFF00', '#000000', '#FFFFFF', '#8B4513', '#FF8C00', '#777777', '#800080', '#FFC0CB', '#40E0D0'];
     var CL = call.length;
-    for (var z = 0; z < CL; z++){
-        Sounds.names[z] = new Audio(PATH + call[z].toLowerCase()+".mp3");
+    for (var z = 0; z < CL; z++) {
+        Sounds.names[z] = new Audio(PATH + call[z].toLowerCase() + ".mp3");
     }
     combinedArray = [];
     combinedArray = call.concat(response);
